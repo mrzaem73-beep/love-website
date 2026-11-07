@@ -266,8 +266,13 @@ p {
 }
 
 @keyframes beat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.15); }
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
 }
 
 @keyframes appear {
@@ -309,15 +314,17 @@ p {
 
 <body>
 
-<!-- หน้าใส่รหัส -->
+<!-- PAGE 1: PASSWORD -->
 <section id="login" class="screen active">
     <div class="card">
 
         <div class="lotus">🪷</div>
         <h1>Welcome My Love</h1>
-        <p class="subtitle">ใส่รหัสผ่านเพื่อเข้าสู่โลกของเรา 💗</p>
+        <p class="subtitle">
+            ใส่รหัสผ่านเพื่อเข้าสู่โลกของเรา 💗
+        </p>
 
-        <div class="pin-display" id="pinDisplay">
+        <div class="pin-display">
             <span class="pin-dot"></span>
             <span class="pin-dot"></span>
             <span class="pin-dot"></span>
@@ -328,12 +335,15 @@ p {
             <button class="key" onclick="addDigit('1')">1</button>
             <button class="key" onclick="addDigit('2')">2</button>
             <button class="key" onclick="addDigit('3')">3</button>
+
             <button class="key" onclick="addDigit('4')">4</button>
             <button class="key" onclick="addDigit('5')">5</button>
             <button class="key" onclick="addDigit('6')">6</button>
+
             <button class="key" onclick="addDigit('7')">7</button>
             <button class="key" onclick="addDigit('8')">8</button>
             <button class="key" onclick="addDigit('9')">9</button>
+
             <button class="key" onclick="clearPin()">ล้าง</button>
             <button class="key" onclick="addDigit('0')">0</button>
             <button class="key" onclick="deleteDigit()">⌫</button>
@@ -342,31 +352,35 @@ p {
         <p id="pinMessage" class="subtitle">
             รหัสผ่านมี 4 ตัวเลข
         </p>
+
     </div>
 </section>
 
-<!-- หน้า LOBBY -->
+<!-- PAGE 2: LOBBY -->
 <section id="lobby" class="screen">
     <div class="lobby">
 
         <div class="lotus">🪷</div>
         <h1>Welcome to our little world</h1>
-        <p class="subtitle">เลือกภาพที่อยากเปิดดูได้เลยนะ 💗</p>
+
+        <p class="subtitle">
+            เลือกภาพที่อยากเปิดดูได้เลยนะ 💗
+        </p>
 
         <div class="gallery">
 
             <button class="photo-card" onclick="openGame(1)">
-                <img src="images/love1.jpg" alt="รูปที่หนึ่ง">
+                <img src="./love1.jpg" alt="รูปที่หนึ่ง">
                 <span>ความรัก 💗</span>
             </button>
 
             <button class="photo-card" onclick="openGame(2)">
-                <img src="images/love2.jpg" alt="รูปที่สอง">
+                <img src="./love2.jpg" alt="รูปที่สอง">
                 <span>คำถาม ❀</span>
             </button>
 
             <button class="photo-card" onclick="openGame(3)">
-                <img src="images/love3.jpg" alt="รูปที่สาม">
+                <img src="./love3.jpg" alt="รูปที่สาม">
                 <span>Yes or Yes 💕</span>
             </button>
 
@@ -375,10 +389,11 @@ p {
         <p class="subtitle" style="margin-top:25px;">
             มีอะไรเล็ก ๆ น้อย ๆ อยากให้เธอลองเล่นดูนะ
         </p>
+
     </div>
 </section>
 
-<!-- เกมรูปที่ 1 -->
+<!-- PAGE 3: GAME 1 -->
 <section id="game1" class="screen">
     <div class="card">
 
@@ -398,19 +413,20 @@ p {
             <div class="big-heart">💗</div>
 
             <p>
-                เดี๋ยวเลี้ยง มัดชะแก้วหนึ่ง
-                หรือ ชูชี หรือ ชอกมีน ❤️
+                เดื่ยวเลื้ยง มัดชะเเก้วหนื่ง
+                หลื ชูชี หลื ชอกมีน ❤️
             </p>
 
-            <button class="main-btn" onclick="showScreen('lobby')">
-                กลับหน้า Lobby
-            </button>
         </div>
+
+        <button class="light-btn" onclick="showScreen('lobby')">
+            กลับหน้า Lobby
+        </button>
 
     </div>
 </section>
 
-<!-- เกมรูปที่ 2 -->
+<!-- PAGE 4: GAME 2 -->
 <section id="game2" class="screen">
     <div class="card">
 
@@ -433,18 +449,17 @@ p {
 
         <div id="result2" class="result">
             <div class="big-heart">💕</div>
-
             <p>ขอหยังเกี่ยวกับฉันได้ 1 อย่าง</p>
-
-            <button class="main-btn" onclick="showScreen('lobby')">
-                กลับหน้า Lobby
-            </button>
         </div>
+
+        <button class="light-btn" onclick="showScreen('lobby')">
+            กลับหน้า Lobby
+        </button>
 
     </div>
 </section>
 
-<!-- เกมรูปที่ 3 -->
+<!-- PAGE 5: GAME 3 -->
 <section id="game3" class="screen">
     <div class="card">
 
@@ -461,25 +476,27 @@ p {
         </button>
 
         <div id="result3" class="result">
+
             <div class="big-heart">💗</div>
 
             <p style="font-size:21px;">
                 ຈັບອັນນັ້ນໃຫ້ເເດ່
             </p>
 
-            <button class="main-btn" onclick="showScreen('apology')">
+            <button class="main-btn" onclick="openApology()">
                 อ่านคำขอโทษต่อ 💌
             </button>
 
-            <button class="light-btn" onclick="showScreen('lobby')">
-                กลับหน้า Lobby
-            </button>
         </div>
+
+        <button class="light-btn" onclick="showScreen('lobby')">
+            กลับหน้า Lobby
+        </button>
 
     </div>
 </section>
 
-<!-- หน้าคำขอโทษ -->
+<!-- PAGE 6: APOLOGY -->
 <section id="apology" class="screen">
     <div class="card">
 
@@ -490,7 +507,9 @@ p {
             ເພີ່ນເຂົາຂໍໂທດກັບເລື່ອງວັນສູກທີເຂົາບໍ່ເຂົ້າໃຈເພີ່ນລະເຂົາເຮັດໃຫ້ເພີ່ນຄຶດຫຼາຍເຂົາຂໍໃຫ້ເພີ່ນໃຫ້ອະໄພໄດ້ບໍ່
         </div>
 
-        <p class="question">ให้อภัยเราได้ไหม?</p>
+        <p class="question">
+            ให้อภัยเราได้ไหม?
+        </p>
 
         <button class="main-btn" onclick="finalAnswer()">
             Yes 💗
@@ -506,8 +525,6 @@ p {
             <p>ขอบคุณนะคนดี 🪷</p>
         </div>
 
-        <br>
-
         <button class="light-btn" onclick="showScreen('lobby')">
             กลับหน้า Lobby
         </button>
@@ -517,12 +534,13 @@ p {
 
 <script>
 
-// รหัสผ่าน
+// PASSWORD SYSTEM
+
 const PASSCODE = "1402";
 let pin = "";
 
-// เปลี่ยนหน้า
 function showScreen(screenId) {
+
     document.querySelectorAll(".screen").forEach(screen => {
         screen.classList.remove("active");
     });
@@ -530,8 +548,10 @@ function showScreen(screenId) {
     document.getElementById(screenId).classList.add("active");
 }
 
-// แสดงจุดรหัสผ่าน
+// UPDATE PASSWORD DOTS
+
 function updatePinDisplay() {
+
     const dots = document.querySelectorAll(".pin-dot");
 
     dots.forEach((dot, index) => {
@@ -539,8 +559,10 @@ function updatePinDisplay() {
     });
 }
 
-// ใส่ตัวเลข
+// TYPE PASSWORD
+
 function addDigit(number) {
+
     if (pin.length >= 4) return;
 
     pin += number;
@@ -554,11 +576,15 @@ function addDigit(number) {
                 "รหัสถูกต้อง 💗";
 
             setTimeout(() => {
+
                 pin = "";
                 updatePinDisplay();
-                showScreen("lobby");
+
                 document.getElementById("pinMessage").textContent =
                     "รหัสผ่านมี 4 ตัวเลข";
+
+                showScreen("lobby");
+
             }, 400);
 
         } else {
@@ -567,11 +593,13 @@ function addDigit(number) {
                 "รหัสไม่ถูกต้อง ลองอีกครั้งนะ";
 
             setTimeout(() => {
+
                 pin = "";
                 updatePinDisplay();
 
                 document.getElementById("pinMessage").textContent =
                     "รหัสผ่านมี 4 ตัวเลข";
+
             }, 800);
         }
     }
@@ -587,32 +615,38 @@ function deleteDigit() {
     updatePinDisplay();
 }
 
-// เปิดเกมใหม่และล้างคำตอบเก่า
+// RESET ALL MINI GAMES WHEN RE-ENTERING
+
 function openGame(number) {
 
-    // ล้างผลลัพธ์ของทุกเกม
     document.getElementById("result1").classList.remove("show");
     document.getElementById("result2").classList.remove("show");
     document.getElementById("result3").classList.remove("show");
 
-    // ล้างคำตอบเกมคณิตศาสตร์
     document.getElementById("mathAnswer").value = "";
 
-    // เปิดเกมที่เลือก
+    document.getElementById("finalResult").classList.remove("show");
+
     showScreen("game" + number);
 }
 
-// เกมที่ 1
+// GAME 1
+
 function loveAnswer(isLove) {
 
     if (isLove) {
+
         document.getElementById("result1").classList.add("show");
+
     } else {
+
         showScreen("lobby");
+
     }
 }
 
-// เกมที่ 2
+// GAME 2
+
 function checkMath() {
 
     const answer = document.getElementById("mathAnswer").value.trim();
@@ -629,17 +663,34 @@ function checkMath() {
     }
 }
 
-// เกมที่ 3
+// GAME 3
+
 function yesAnswer() {
+
     document.getElementById("result3").classList.add("show");
+
 }
 
-// คำตอบสุดท้าย
+// OPEN APOLOGY PAGE AND RESET ITS OLD RESULT
+
+function openApology() {
+
+    document.getElementById("finalResult").classList.remove("show");
+
+    showScreen("apology");
+
+}
+
+// FINAL ANSWER
+
 function finalAnswer() {
+
     document.getElementById("finalResult").classList.add("show");
+
 }
 
-// กดตรงไหนก็มีหัวใจลอยขึ้น
+// FLOATING HEARTS
+
 document.addEventListener("click", function(event) {
 
     const heartSymbols = ["💗", "💕", "💖", "♡", "🩷"];
